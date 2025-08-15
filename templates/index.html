@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentsAI - Voice Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Background Animation -->
+        <div class="background-animation">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <header class="app-header">
+                <div class="logo-container">
+                    <div class="logo-icon">🤖</div>
+                    <h1 class="app-title">AgentsAI</h1>
+                </div>
+                <p class="app-subtitle">Your Intelligent Voice Assistant</p>
+                <div class="status-indicator">
+                    <div class="status-dot"></div>
+                    <span class="status-text">Ready to help</span>
+                </div>
+            </header>
+
+            <!-- Voice Assistant Interface -->
+            <main class="voice-assistant">
+                <!-- Session Management -->
+                <div class="session-panel">
+                    <div class="session-info">
+                        <label for="session-id">Session ID:</label>
+                        <div class="session-input-group">
+                            <input type="text" id="session-id" value="" placeholder="Enter session ID or leave blank for new session">
+                            <button onclick="setSessionId()" class="session-btn">Set</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Voice Interface -->
+                <div class="voice-interface">
+                    <!-- Single Recording Button (Combined Start/Stop) -->
+                    <div class="recording-section">
+                        <button id="voiceButton" class="voice-button" data-state="idle">
+                            <div class="button-content">
+                                <div class="microphone-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 1C10.34 1 9 2.34 9 4V12C9 13.66 10.34 15 12 15C13.66 15 15 13.66 15 12V4C15 2.34 13.66 1 12 1Z" fill="currentColor"/>
+                                        <path d="M19 10V12C19 16.42 15.42 20 11 20H13C17.42 20 21 16.42 21 12V10H19Z" fill="currentColor"/>
+                                        <path d="M5 10V12C5 16.42 8.58 20 13 20H11C6.58 20 3 16.42 3 12V10H5Z" fill="currentColor"/>
+                                        <path d="M12 23V20" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M8 23H16" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <span class="button-text">Tap to Speak</span>
+                            </div>
+                            <div class="pulse-ring"></div>
+                            <div class="recording-timer">00:00</div>
+                        </button>
+                        
+                        <!-- Status Display -->
+                        <div class="recording-status">
+                            <div class="status-message">Ready to listen</div>
+                            <div class="tech-badges">
+                                <span class="tech-badge">🎙️ Voice</span>
+                                <span class="tech-badge">🧠 AI</span>
+                                <span class="tech-badge">🔊 Speech</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conversation Display -->
+                    <div class="conversation-container">
+                        <div id="llmResult" class="conversation-result"></div>
+                        <div id="chat-history" class="chat-history"></div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="app-footer">
+                <div class="footer-content">
+                    <p>&copy; 2025 AgentsAI Project | Day 12: Revamped UI</p>
+                    <div class="footer-badges">
+                        <span class="badge">🔒 Secure</span>
+                        <span class="badge">⚡ Fast</span>
+                        <span class="badge">🛡️ Bulletproof</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/voice-button.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/error-handling.js') }}"></script>
+</body>
+</html>

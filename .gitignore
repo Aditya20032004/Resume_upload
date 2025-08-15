@@ -1,0 +1,63 @@
+# Environment Variables (Contains API Keys)
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Logs
+*.log
+logs/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Uploads Directory (User Files)
+uploads/*
+!uploads/.gitkeep
+
+# SSL Certificates
+*.pem
+*.key
+*.crt
+
+# Backup Files
+*_backup.py
+*_old.*
+*_backup.*
+
+# Test Files
+test_*.py
+*_test.py
+
+# Demo Files
+demo_*.py
+*_demo.py
+
+# Debug Files
+debug_*.py
+*_debug.py
+
+# Temporary Files
+*.tmp
+*.temp
+
+# Build Files
+build/
+dist/
+*.egg-info/
